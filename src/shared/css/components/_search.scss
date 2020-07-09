@@ -1,0 +1,26 @@
+.home section.movielist_area > section.search_wrapper {
+   margin-bottom: 2rem;
+   @extend %bs;
+   border-radius: 1rem;
+   overflow: hidden;
+   > div.search_area {
+      @extend %center;
+      justify-content: flex-start;
+      position: relative;
+   }
+   input {
+      flex-grow: 1;
+      padding: 1.5rem 4rem;
+      font-size: 1.6rem;
+      color: $mainColor;
+      background: #222;
+      border-radius: 1rem;
+      font-style: italic;
+   }
+   .svg-inline--fa {
+      position: absolute;
+      left: 1.5%;
+      color: $mainColor;
+      font-size: 1.4rem;
+   }
+}

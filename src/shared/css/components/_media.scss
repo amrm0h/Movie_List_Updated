@@ -1,0 +1,597 @@
+@media screen and (max-width: 1245px) {
+   section.filter_area {
+      width: 18%;
+      padding: 2rem 1rem;
+      border-radius: .6rem;
+
+      >ul {
+         flex-wrap: wrap;
+         margin-top: 2rem;
+         border-radius: .3rem;
+         overflow: hidden;
+         min-height: 10rem;
+         align-items: stretch;
+      }
+   }
+
+   .home {
+      section.movielist_area {
+         >div.curr_page {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1.4rem;
+         }
+
+         >section.search_wrapper {
+            margin-bottom: 1.5rem;
+
+            input {
+               padding-left: 3.2rem;
+               font-size: 1.4rem;
+            }
+
+            .svg-inline--fa {
+               left: 1%;
+               font-size: 1.3rem;
+            }
+         }
+      }
+
+      section.pagination {
+         margin-bottom: 1.5rem;
+
+         ul li {
+            margin-right: .8rem;
+         }
+      }
+   }
+
+   section.movielist_area {
+      margin-left: 23%;
+      min-width: 77%;
+
+      &>div.movies {
+         padding: 1rem 0;
+
+         >.movie {
+            width: calc(33.3333% - 2rem);
+            max-width: calc(33.3333% - 2rem);
+            margin-bottom: 1.4rem;
+
+            >span:first-of-type {
+               top: 69%;
+
+               >.CircularProgressbar.progress_bar {
+                  .CircularProgressbar-text {
+                     font-size: 3rem;
+                  }
+               }
+            }
+
+            h2 {
+               font-size: 1.6rem;
+               line-height: 1.1;
+               letter-spacing: .03rem;
+               min-height: 5rem;
+               margin-bottom: 1rem;
+               padding-top: 2.3rem;
+
+               &>.svg-inline--fa {
+                  margin-right: .3rem;
+                  font-size: 1.4rem;
+               }
+            }
+
+            >section {
+               border-radius: .4rem;
+
+               h3 {
+                  font-size: 1.6rem;
+                  padding: .8rem 0;
+               }
+
+               p {
+                  font-size: 1.2rem;
+               }
+            }
+         }
+
+         >.no_match {
+            >.svg-inline--fa {
+               font-size: 2rem;
+            }
+
+            >p {
+               padding-top: 1.5rem;
+               font-size: 2.3rem;
+            }
+         }
+      }
+   }
+
+   .favourites .container>.fav {
+      >button {
+         padding: 1.7rem 5rem;
+      }
+
+      .movies .movie {
+         h2 {
+            font-size: 2rem;
+         }
+
+         >section {
+            border-radius: 1rem;
+
+            h3 {
+               font-size: 2.6rem;
+               padding: 1.5rem 0;
+            }
+
+            p {
+               font-size: 1.7rem;
+               line-height: 1.1;
+               padding: 1rem 2rem;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 992px) {
+   header {
+      h1 {
+         font-size: 3rem;
+
+         a>.svg-inline--fa.fa-w-18 {
+            font-size: 1.8rem;
+            margin-right: .5rem;
+            vertical-align: -.01rem;
+         }
+      }
+
+      nav li a {
+         padding: .4rem .8rem;
+         border: 1px solid transparent;
+         border-radius: .5rem;
+
+         >.svg-inline--fa {
+            font-size: 1.2rem;
+         }
+      }
+   }
+
+   section.filter_area {
+      width: 20.5%;
+
+      >span {
+         font-size: 1.4rem;
+      }
+
+      >ul {
+         margin-top: 1.5rem;
+         min-height: 8rem;
+
+         li {
+            font-size: 1.4rem;
+         }
+      }
+   }
+
+   .home {
+      section.movielist_area>div.curr_page {
+         font-size: 1.9rem;
+      }
+
+      section.movielist_area>section.search_wrapper {
+         input {
+            padding-left: 2.5rem;
+         }
+
+         .svg-inline--fa {
+            font-size: 1.1rem;
+         }
+      }
+   }
+
+   section.movielist_area {
+      margin-left: 26%;
+      min-width: 74%;
+
+      &>div.movies {
+         >.movie {
+            width: calc(50% - 2rem);
+            max-width: calc(50% - 2rem);
+
+            h2 {
+               min-height: 7rem;
+
+               &>.svg-inline--fa {
+                  font-size: 1.6rem;
+               }
+            }
+
+            >section {
+               border-radius: 1.4rem;
+
+               h3 {
+                  font-size: 3rem;
+                  padding: 2rem 0;
+               }
+
+               p {
+                  font-size: 1.8rem;
+                  line-height: 1;
+               }
+            }
+         }
+
+         >.no_match {
+            >.svg-inline--fa {
+               font-size: 2rem;
+            }
+
+            >p {
+               padding-top: 1.5rem;
+               font-size: 2.3rem;
+            }
+         }
+      }
+   }
+
+   div.not_found_page .container {
+      margin-top: 4rem;
+
+      .svg-inline--fa {
+         font-size: 2.5rem;
+      }
+
+      p {
+         padding-top: 1rem;
+         font-size: 2.3rem;
+      }
+   }
+
+   .favourites .container>.fav section.no_favs {
+      >.svg-inline--fa {
+         font-size: 2.5rem;
+      }
+
+      >p {
+         padding-top: 1.5rem;
+         font-size: 2rem;
+      }
+   }
+
+   .modal_overlay .modal {
+      padding-bottom: 1.5rem;
+
+      >h1 {
+         padding: .7rem 0;
+         font-size: 2.2rem;
+      }
+
+      >p {
+         font-size: 1.8rem;
+      }
+
+      >button {
+         font-size: 1.5rem;
+         padding: .8rem 2rem;
+         margin-top: 0;
+      }
+   }
+}
+
+@media screen and (max-width: 800px) {
+   body {
+      background-position: 0 0;
+      padding: 7.6rem 0 3rem;
+   }
+
+   .home {
+      .container {
+         padding-top: 0;
+      }
+
+      section.movielist_area>div.curr_page {
+         margin-top: 1rem;
+      }
+   }
+
+   section.filter_area {
+      width: 90%;
+      font-size: 1.4rem;
+      border-radius: 1rem;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: black;
+      box-shadow: 0 0 .5rem .5rem white;
+      z-index: 4;
+      overflow: hidden;
+
+      >span {
+         border-bottom: none;
+         padding: 1.2rem;
+      }
+
+      >ul {
+         flex-wrap: nowrap;
+         margin: 0 0 0 1.5rem;
+         flex-grow: 1;
+         min-height: auto;
+         align-self: stretch;
+         box-shadow: none;
+         border-radius: 0;
+         border-left: .1rem solid rgba(255, 255, 255, .5);
+
+         li {
+            flex-grow: 1;
+            font-size: 1.6rem;
+         }
+      }
+   }
+
+   section.movielist_area {
+      margin-left: 0;
+      margin-top: 6rem;
+      min-width: 100%;
+      color: white;
+      text-align: center;
+
+      &>div.movies {
+         >.movie {
+            h2 {
+               font-size: 2rem;
+               min-height: 9rem;
+            }
+
+            >section {
+               h3 {
+                  font-size: 2.2rem;
+                  padding: 1rem 0;
+               }
+
+               p {
+                  font-size: 1.6rem;
+                  line-height: 1.1;
+               }
+            }
+         }
+
+         >.no_match {
+            >p {
+               padding-top: 1.2rem;
+               font-size: 2rem;
+            }
+         }
+      }
+   }
+
+   div.not_found_page .container {
+      margin-top: 3rem;
+
+      .svg-inline--fa {
+         font-size: 2.3rem;
+      }
+
+      p {
+         font-size: 2rem;
+      }
+   }
+
+   .favourites .container>.fav {
+      margin-top: 0;
+
+      >button {
+         padding: 1.4rem 4rem;
+      }
+
+      .movies .movie {
+         h2 {
+            font-size: 1.7rem;
+            padding-top: 0;
+         }
+
+         >section {
+            border-radius: .6rem;
+
+            h3 {
+               font-size: 2rem;
+               padding: 1.2rem 0;
+            }
+
+            p {
+               font-size: 1.6rem;
+               padding: 1rem;
+            }
+         }
+      }
+   }
+
+   .modal_overlay .modal {
+      padding-bottom: 1.3rem;
+
+      >h1 {
+         padding: .3rem 0;
+         font-size: 2rem;
+      }
+
+      >p {
+         font-size: 1.5rem;
+         margin: 1rem;
+      }
+
+      >button {
+         font-size: 1.3rem;
+         padding: .4rem 1.5rem;
+      }
+   }
+}
+
+@media screen and (max-width: 600px) {
+   body {
+      background-position: 0 1rem;
+      padding: 10rem 0 3rem;
+   }
+
+   header {
+      background-position: 0 -4.4rem;
+
+      .container {
+         flex-direction: column
+      }
+
+      h1 {
+         font-size: 2.5rem;
+         margin-bottom: 1rem;
+
+         a>.svg-inline--fa.fa-w-18 {
+            font-size: 1.6rem;
+            vertical-align: -.1rem;
+         }
+      }
+
+      nav li {
+         font-size: 1.4rem;
+         padding: .4rem;
+
+         a {
+            padding: .3rem .6rem;
+         }
+      }
+   }
+
+   section.filter_area {
+      font-size: 1.2rem;
+
+      >ul {
+         li {
+            font-size: 1.1rem;
+         }
+      }
+   }
+
+   .home {
+      section.movielist_area>div.curr_page {
+         font-size: 1.4rem;
+      }
+
+      section.movielist_area>section.search_wrapper {
+         input {
+            padding: 1rem 2.2rem;
+            font-size: 1.2rem;
+         }
+
+         .svg-inline--fa {
+            font-size: 1.1rem;
+         }
+      }
+
+      section.pagination ul li {
+         margin-right: .5rem;
+         width: 2.5rem;
+         height: 2.5rem;
+         border-radius: .2rem;
+         font-size: 1.3rem;
+      }
+
+
+   }
+
+   section.movielist_area {
+      margin-left: 0;
+      margin-top: 6rem;
+      min-width: 100%;
+      color: white;
+      text-align: center;
+
+      &>div.movies {
+         >.movie {
+
+            h2 {
+               font-size: 1.6rem;
+               min-height: 7rem;
+               padding-top: 1.6rem;
+            }
+
+            >section {
+
+               h3 {
+                  font-size: 1.8rem;
+               }
+
+               p {
+                  font-size: 1.2rem;
+                  line-height: 1.2;
+               }
+            }
+         }
+
+         >.no_match {
+            >.svg-inline--fa {
+               font-size: 1.5rem;
+            }
+
+            >p {
+               padding-top: .6rem;
+               font-size: 1.5rem;
+            }
+         }
+      }
+   }
+
+
+   div.not_found_page .container {
+      .svg-inline--fa {
+         font-size: 2rem;
+      }
+
+      p {
+         font-size: 1.7rem;
+      }
+   }
+
+   .favourites .container>.fav {
+      margin-top: 0;
+
+      >button {
+         padding: 1rem 2rem;
+         font-size: 1.1rem;
+      }
+
+      .movies .movie {
+         h2 {
+            font-size: 1.4rem;
+            min-height: 6rem;
+         }
+
+         >section {
+
+            h3 {
+               font-size: 1.6rem;
+               padding: 1rem 0;
+            }
+
+            p {
+               font-size: 1.4rem;
+               padding: .5rem;
+               line-height: 1.2;
+            }
+         }
+      }
+
+      section.no_favs {
+
+         >.svg-inline--fa {
+            font-size: 2rem;
+         }
+
+         >p {
+            padding-top: 1rem;
+            font-size: 1.5rem;
+         }
+      }
+   }
+}

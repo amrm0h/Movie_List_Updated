@@ -1,0 +1,63 @@
+header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   min-height: 5rem;
+   z-index: 5;
+   box-shadow: 0 0.1rem 0.4rem white;
+   background: url(../images/header.jpeg) no-repeat;
+   background-size: cover;
+   .container {
+      justify-content: space-between;
+      min-height: inherit
+   }
+   h1 {
+      font-size: 4rem;
+      margin: 2rem 0;
+      a {
+         color: $mainColor;
+         >.svg-inline--fa.fa-w-18 {
+            font-size: 3rem;
+            margin-right: 1rem;
+            vertical-align: -.3rem;
+         }
+         &:hover>.svg-inline--fa.fa-w-18 {
+            animation: spin .5s linear infinite both;
+         }
+      }
+   }
+   nav {
+      flex-grow: 1;
+      height: 4rem;
+      ul {
+         justify-content: flex-end;
+         height: 100%;
+      }
+      li {
+         font-size: 1.8rem;
+         padding: .7rem;
+         a {
+            height: 100%;
+            color: $lightMainColor;
+            @extend %center;
+            justify-content: flex-start;
+            width: fit-content;
+            padding: .5rem 1rem;
+            border: 2px solid transparent;
+            border-radius: 1rem;
+            &:hover {
+               color: $mainColor;
+            }
+            &.active_link {
+               border-color: $mainColor;
+               color: $mainColor;
+            }
+            >.svg-inline--fa {
+               font-size: 1.5rem;
+               margin-right: .3rem;
+            }
+         }
+      }
+   }
+}

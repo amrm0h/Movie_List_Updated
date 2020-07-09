@@ -1,0 +1,45 @@
+section.filter_area {
+   align-self: flex-start;
+   width: 22rem;
+   position: fixed;
+   text-align: center;
+   font-size: 1.6rem;
+   @extend %bs;
+   padding: 3rem 2rem;
+   border-radius: 1rem;
+   color: white;
+   letter-spacing: .03rem;
+   >span {
+      display: block;
+      padding: 0 0 .5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      color: #dbdf23;
+   }
+   >ul {
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      border-radius: .3rem;
+      overflow: hidden;
+      @extend %bs;
+      min-height: 10rem;
+      align-items: stretch;
+      li {
+         flex-basis: 100%;
+         font-size: 1.6rem;
+      }
+      a {
+         @extend %center;
+         height: 100%;
+         font-weight: bold;
+         color: $lightMainColor;
+
+         &:hover {
+            color: $mainColor;
+         }
+         &.active-filter {
+            color: $mainColor;
+            background-color: #7a7878;
+         }
+      }
+   }
+}

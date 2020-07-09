@@ -1,0 +1,59 @@
+* {
+   box-sizing: border-box;
+   transition: all ease-in-out .2s;
+}
+
+html {
+   font-size: 62.5%;
+   height: 100vh;
+}
+
+body {
+   overflow-y: scroll;
+   padding: 9rem 0 4rem;
+   height: 100%;
+   width: 100%;
+   background: url(../images/body_image.jpeg) no-repeat fixed 0 -40rem;
+   background-size: cover;
+   font-family: Arial, Tahoma;
+}
+
+h1,
+h2,
+h3,
+ul,
+p {
+   margin: 0;
+}
+
+ul {
+   padding: 0;
+   list-style: none;
+   @extend %center
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+.container {
+   @extend %center;
+   flex-flow: row wrap;
+   width: 90%;
+   max-width: 1120px;
+   margin: auto;
+}
+
+input,
+input:focus,
+button,
+button:focus,
+a {
+   outline: none;
+   border: none;
+}
+
+input::placeholder {
+   font-size: 1.1rem
+}

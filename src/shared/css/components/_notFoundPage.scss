@@ -1,0 +1,20 @@
+div.not_found_page .container {
+   margin-top: 6rem;
+   color: black;
+   text-align: center;
+   background-color: $mainColor;
+   border-radius: 1rem;
+   padding: 1rem 0;
+   flex-direction: column;
+   .svg-inline--fa {
+      font-size: 3rem;
+   }
+   p {
+      padding-top: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-style: italic;
+      letter-spacing: .04rem;
+      text-shadow: 0.2rem 0.2rem 1rem #636161;
+   }
+}

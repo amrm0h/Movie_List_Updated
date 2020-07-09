@@ -1,0 +1,20 @@
+// Vars
+// colors
+// #f98d05
+// #ffce1d
+$mainColor: #ffce1d;
+$lightMainColor: #ceb710;
+$altcolor: rgba(16, 19, 18, 0.931);
+
+// placeholder for centering
+%center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+// box shadow placeholder 
+%bs {
+   box-shadow: 0 0 0.5rem rgba(255, 255, 255, .9);
+}
+

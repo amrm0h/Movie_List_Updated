@@ -1,0 +1,9 @@
+.home section.movielist_area > p.spinner {
+   display: inline-block;
+   padding: 3rem;
+   border: .5rem solid $mainColor;
+   border-bottom-color: transparent;
+   border-radius: 50%;
+   animation: spinner 1s linear infinite both;
+   margin-top: 2rem;
+}

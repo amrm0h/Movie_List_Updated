@@ -1,0 +1,55 @@
+.favourites .container>.fav {
+   margin-left: 0;
+   min-width: 100%;
+
+   >button {
+      color: black;
+      padding: 2rem 5rem;
+      border: none;
+      background: $mainColor;
+      border-radius: 1rem;
+      box-shadow: 0 0 1.5rem .3rem $mainColor;
+      font-size: 1.7rem;
+      font-weight: bold;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: .05rem;
+      cursor: pointer;
+      margin-bottom: 2rem;
+      transition: all linear .3s;
+
+      &:hover {
+         background: black;
+         color: $mainColor;
+         box-shadow: 0 0 1rem .5rem white;
+      }
+   }
+
+   .movies .movie {
+      >span:first-of-type {
+         top: 67%;
+      }
+
+      img {
+         min-height: 78.3%;
+      }
+   }
+
+   section.no_favs {
+      color: black;
+
+      >.svg-inline--fa {
+         font-size: 3rem;
+         animation: spinner 2s linear infinite;
+      }
+
+      >p {
+         padding-top: 2rem;
+         font-size: 2.5rem;
+         font-weight: bold;
+         font-style: italic;
+         letter-spacing: .04rem;
+         text-shadow: 0.2rem 0.2rem 1rem #636161;
+      }
+   }
+}

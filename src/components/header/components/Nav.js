@@ -14,7 +14,7 @@ const Nav = () => {
          <ul>
             <li>
                <NavLink
-                  to="/"
+                  to="/top-rated"
                   activeClassName="active_link"
                   isActive={
                      () =>

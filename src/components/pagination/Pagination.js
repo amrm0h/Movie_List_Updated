@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useEffect } from 'react';
-import PaginationItem from './components/PaginationItem';
+import PaginationItem from './PaginationItem';
 
 const Pagination = React.memo(() => {
    const listRef = useRef();

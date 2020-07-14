@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { MovieContext } from '../../../dataFetching/contextProvider/ContextProvider';
+import { MovieContext } from '../../dataFetching/contextProvider/ContextProvider';
 import Modal from "react-modal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';

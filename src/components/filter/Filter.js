@@ -5,6 +5,9 @@ import { MovieContext } from '../../dataFetching/contextProvider/ContextProvider
 const Filter = () => {
    const { handleChangeUrl, page } = useContext(MovieContext);
    const listRef = useRef();
+
+   // use react router .
+   
    const hanldeClickingTheCategory = (e) => {
       const cat = e.target.getAttribute("data-cat");
       handleChangeUrl(cat, page);

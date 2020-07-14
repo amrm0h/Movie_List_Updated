@@ -1,5 +1,5 @@
 import React, { useContext, useCallback } from 'react'
-import { MovieContext } from '../../../dataFetching/contextProvider/ContextProvider'
+import { MovieContext } from '../../dataFetching/contextProvider/ContextProvider'
 
 const PaginationItem = React.memo(({ number, lref }) => {
    const { handleChangeUrl }= useContext(MovieContext);

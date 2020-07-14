@@ -4,21 +4,29 @@ import { faFilm, faHeart as fasHeart, faTrashAlt } from '@fortawesome/free-solid
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+// import { useLocation } from 'react-router-dom';
 
-const Movie = ({ id, title, poster, vote, overview, date, handleClick, isFav, favList, list }) => {
-   const imgUrl = `https://image.tmdb.org/t/p/w200${poster}`;
+const months = [
+   'Jan', 'Fab', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+];
+
+
+const Movie = ({ id, title, poster_path, vote_average, overview, release_date, handleClick, isFav, favList, list }) => {
+   const imgUrl = `https://image.tmdb.org/t/p/w200${poster_path}`;
    const [favOne, setFaveOne] = useState(!isFav);
-   const movieVote = vote * 10;
+   const movieVote = vote_average * 10;
    const needeDate = () => {
-      const theDate = new Date(date);
-      const months = [
-         'Jan', 'Fab', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-      ];
+      const theDate = new Date(release_date);
       const theDay = theDate.getDate();
       const theMonth = months[theDate.getMonth()];
       const theYear = theDate.getFullYear();
       return `${theDay}, ${theMonth} ${theYear}`
    }
+
+   // const location = useLocation();
+   // // instead of list 
+   // console.log(location);
+
    const progressColor = () => {
       if ( movieVote > 80 )  return '#055305';
       if ( movieVote > 70 && movieVote < 80 ) return '#b8b849';
@@ -33,8 +41,9 @@ const Movie = ({ id, title, poster, vote, overview, date, handleClick, isFav, fa
                favOne && setFaveOne(f => !f);
             }}
          >
+         {/* use location instead */}
          {
-            list ? 
+            list ?
             <FontAwesomeIcon 
                icon={(favOne && !favList) ? farHeart : fasHeart} 
                onClick={(e) => {
@@ -75,4 +84,5 @@ const Movie = ({ id, title, poster, vote, overview, date, handleClick, isFav, fa
    )
 }
 
-export default Movie
+export default React.memo(Movie);
+// as we used it more than one 

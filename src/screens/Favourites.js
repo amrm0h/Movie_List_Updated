@@ -48,12 +48,7 @@ const Favourites = () => {
                            <Movie
                               key={movie.id}
                               favList={true}
-                              id={movie.id}
-                              title={movie.title}
-                              poster={movie.poster_path}
-                              overview={movie.overview}
-                              date={movie.release_date}
-                              vote={movie.vote_average}
+                              {...movie}
                               handleClick={(id) => handleClickRemoveSingle(id)}
                            />
                         )) :

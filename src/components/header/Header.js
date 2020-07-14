@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Nav from "./components/Nav";
+import Nav from "./Nav";
 import { Link } from "react-router-dom";
 import { MovieContext } from "../../dataFetching/contextProvider/ContextProvider";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

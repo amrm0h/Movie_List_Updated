@@ -32,4 +32,4 @@ const Search = ({ movies, visibility, handleChangeVisibleMovies }) => {
    )
 }
 
-export default Search
+export default Search;

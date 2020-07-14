@@ -7,7 +7,6 @@ import { faVideo } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
    const { handleChangeUrl } = useContext(MovieContext);
-   const handleClick = () => handleChangeUrl("top-rated", 1);
 
    return (
       <header>
@@ -15,7 +14,7 @@ const Header = () => {
             <h1>
                <Link
                   to="/top-rated"
-                  onClick={handleClick}
+                  onClick={() => handleChangeUrl("top-rated", 1)}
                >
                   <FontAwesomeIcon icon={faVideo} />
                Movies</Link>

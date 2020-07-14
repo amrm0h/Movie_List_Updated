@@ -8,11 +8,13 @@ const Favourites = () => {
    const saveToLocalStorage = (savedValue) => {
       return localStorage.setItem("favMovies", JSON.stringify(savedValue));
    }
+
    const handleClickRemoveSingle = (wantedRemoveId) => {
       const remainingFavMovies = favMovies.filter(movie => movie.id !== wantedRemoveId);
       saveToLocalStorage(remainingFavMovies);
       setFavMovies(remainingFavMovies);
-   };
+   }
+   
    const handleClickRemoveAll = () => {
       saveToLocalStorage([]);
       setFavMovies([]);

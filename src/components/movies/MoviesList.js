@@ -7,10 +7,12 @@ import ErrorModal from './ErrorModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFrownOpen } from '@fortawesome/free-solid-svg-icons';
 import Spinner from "./Spinner";
+import { useLocation } from 'react-router-dom';
 
 const MoviesList = () => {
    const { isLoading, movies, error } = useContext(MovieContext);
    const [visibleMovies, setVisibleMovies] = useState([]);
+   const location = useLocation();
 
    const getFavMoviesFromLocStor = localStorage.getItem("favMovies");
    const favMovies = getFavMoviesFromLocStor ?
@@ -35,18 +37,11 @@ const MoviesList = () => {
 
    // get root chain of my page (breadCrumb)
    const getRootChain = () => {
-      const windowPath = window.location.pathname;
-      const neededPortion = windowPath.substr(windowPath.indexOf("/") + 1);
-      const firstLetter = neededPortion.charAt(0).toUpperCase();
-      let cat = "";
-      let chain = `Home / `;
-      if (windowPath.endsWith("/")) {
-         cat = "Top rated";
-         chain += `${cat}.`
-      } else {
-         cat = `${firstLetter}${windowPath.substr(windowPath.indexOf("/") + 2)}`.replace("-", " ");
-         chain += `${cat}.`
-      }
+      const windowPath = location.pathname;
+      const firstLetter = windowPath.substr(windowPath.indexOf("/") + 1).charAt(0).toUpperCase();
+      const cat = `${firstLetter}${windowPath.substr(windowPath.indexOf("/") + 2)}`.replace("-", " ");
+      const chain = `Home / ${cat} .`;
+
       return chain;
    }
 

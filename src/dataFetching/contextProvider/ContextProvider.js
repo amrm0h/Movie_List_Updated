@@ -2,11 +2,11 @@ import React, { useReducer, useEffect, useCallback, useState } from 'react';
 import fetchMoviesReducer, { initialState, startFetch, completeFetch, errorFetch } from "../reducers/fetchMoviesReducer";
 import getUrl from "../urlGetter/getUrl";
 
-// change url Reducer
+// change url initial state for url reducer
 const initialUrlState = {
    cat: "top-rated",
    page: 1
-}
+};
 
 // creating context store and Provider
 export const MovieContext = React.createContext(initialState.movies);

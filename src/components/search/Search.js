@@ -6,7 +6,7 @@ const Search = ({ movies, visibility, handleChangeVisibleMovies }) => {
    const [ inputVal, setInputVal ] = useState('');
 
    useEffect(() => {
-      setInputVal("");
+      setInputVal('');
    }, [movies]);
 
    return (
@@ -34,4 +34,4 @@ const Search = ({ movies, visibility, handleChangeVisibleMovies }) => {
    )
 }
 
-export default Search;
+export default React.memo(Search);

@@ -4,16 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faHome } from '@fortawesome/free-solid-svg-icons';
 import { MovieContext } from '../../dataFetching/contextProvider/ContextProvider';
 
+
+// function to make home active 
+const onPath = (match, location, paths) => {
+   return paths.includes(location.pathname);
+}
+
 const Nav = () => {
 
    const { handleChangeUrl } = useContext(MovieContext);
    // when return to home , activate the first page 
    const handleClick = () => handleChangeUrl("top-rated", 1);
-
-   // function to make home active 
-   const onPath = (match, location, paths) => {
-      return paths.includes(location.pathname);
-   }
 
    return (
       <nav>
@@ -24,12 +25,12 @@ const Nav = () => {
                   activeClassName="active_link"
                   isActive={
                      () =>
-                     onPath(window.match, window.location, ["/", "/top-rated", "/now-playing", "/upcoming"])
+                        onPath(window.match, window.location, ["/", "/top-rated", "/now-playing", "/upcoming"])
                   }
                   exact
                   onClick={handleClick}
                >
-               <FontAwesomeIcon icon={faHome} />
+                  <FontAwesomeIcon icon={faHome} />
                Home</NavLink>
             </li>
             <li>
@@ -37,7 +38,7 @@ const Nav = () => {
                   to="/favourites"
                   activeClassName="active_link"
                >
-               <FontAwesomeIcon icon={faHeart} />
+                  <FontAwesomeIcon icon={faHeart} />
                Favourites</NavLink>
             </li>
          </ul>

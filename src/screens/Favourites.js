@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Movie from '../components/movies/components/Movie';
+import Movie from '../components/movies/Movie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 

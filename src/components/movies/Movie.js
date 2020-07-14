@@ -14,7 +14,6 @@ const months = [
 const Movie = ({ id, title, poster_path, vote_average, overview, release_date, handleClick, isFav }) => {
    // get location as boolean value for home page
    const location = useLocation().pathname !== '/favourites';
-   console.log(location);
    const imgUrl = `https://image.tmdb.org/t/p/w200${poster_path}`;
    const [favOne, setFaveOne] = useState(!isFav);
    const movieVote = vote_average * 10;

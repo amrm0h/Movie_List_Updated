@@ -1,40 +1,23 @@
-import React, { useCallback, useRef, useEffect } from 'react';
+import React from 'react';
 import PaginationItem from './PaginationItem';
 
-const Pagination = React.memo(() => {
-   const listRef = useRef();
-   const memoizedPaginationItem = useCallback(() => {
-      const myList = listRef.current;
-      // function to create numbers from 1 to movieCount
-      const createPagiNumbers = () => {
-         let numbers = [];
-         for ( let x = 1; x <= 5; x++ ) {
-            numbers.push(x);
-         }
-         return numbers;
-      }
-      return (
-         createPagiNumbers().map(num => 
-         <li key={num}>
-            <PaginationItem lref={myList} number={num}/>
-         </li>)
-      )
-   }, []);
 
-   useEffect(() => {
-      if ( listRef ) {
-         const firstElement = listRef.current.children[0]; 
-         firstElement.setAttribute("class", "active");
-      }
-   });
+const numbers = [1, 2, 3, 4, 5];
+
+const Pagination = () => {
 
    return (
       <section className="pagination">
-         <ul ref={listRef}>
-            {memoizedPaginationItem()}
+         <ul>
+            {
+               numbers.map(num =>
+                  <li key={num} className={num === 1 && 'active'}>
+                     <PaginationItem number={num} />
+                  </li>)
+            }
          </ul>
       </section>
    )
-});
+};
 
-export default Pagination
+export default React.memo(Pagination)

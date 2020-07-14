@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Search = ({ movies, visibility, handleChangeVisibleMovies }) => {
-   const inputRef = useRef();
+   const [ inputVal, setInputVal ] = useState('');
+
    useEffect(() => {
-      inputRef.current.value.length > 0 && (inputRef.current.value = "")
+      setInputVal("");
    }, [movies]);
 
    return (
@@ -17,12 +18,13 @@ const Search = ({ movies, visibility, handleChangeVisibleMovies }) => {
       >
          <div className="search_area">
             <input
-               ref={inputRef}
+               value={inputVal}
                type="search"
                name="search-movies"
                placeholder="Type The Movie Name ..."
                onChange={(e) => {
                   const userInput = e.target.value.toLowerCase();
+                  setInputVal(userInput);
                   handleChangeVisibleMovies(userInput);
                }}
             />

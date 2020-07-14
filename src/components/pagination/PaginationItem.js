@@ -1,7 +1,7 @@
 import React, { useContext, useCallback } from 'react'
 import { MovieContext } from '../../dataFetching/contextProvider/ContextProvider'
 
-const PaginationItem = React.memo(({ number, lref }) => {
+const PaginationItem = ({ number }) => {
    const { handleChangeUrl }= useContext(MovieContext);
    const handleChangePageNumber = useCallback((e) => {
       const number = e.target.textContent;
@@ -19,6 +19,6 @@ const PaginationItem = React.memo(({ number, lref }) => {
          onClick={handleChangePageNumber}
       >{number}</span>
    )
-});
+};
 
-export default PaginationItem
+export default React.memo(PaginationItem)

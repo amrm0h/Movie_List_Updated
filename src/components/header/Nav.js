@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faHome } from '@fortawesome/free-solid-svg-icons';
+import { MovieContext } from '../../dataFetching/contextProvider/ContextProvider';
 
 const Nav = () => {
+
+   const { handleChangeUrl } = useContext(MovieContext);
+   // when return to home , activate the first page 
+   const handleClick = () => handleChangeUrl("top-rated", 1);
+
    // function to make home active 
    const onPath = (match, location, paths) => {
       return paths.includes(location.pathname);
@@ -21,6 +27,7 @@ const Nav = () => {
                      onPath(window.match, window.location, ["/", "/top-rated", "/now-playing", "/upcoming"])
                   }
                   exact
+                  onClick={handleClick}
                >
                <FontAwesomeIcon icon={faHome} />
                Home</NavLink>

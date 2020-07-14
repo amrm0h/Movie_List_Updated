@@ -4,28 +4,27 @@ import { faFilm, faHeart as fasHeart, faTrashAlt } from '@fortawesome/free-solid
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-// import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const months = [
    'Jan', 'Fab', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
 ];
 
 
-const Movie = ({ id, title, poster_path, vote_average, overview, release_date, handleClick, isFav, favList, list }) => {
+const Movie = ({ id, title, poster_path, vote_average, overview, release_date, handleClick, isFav }) => {
+   // get location as boolean value for home page
+   const location = useLocation().pathname !== '/favourites';
+   console.log(location);
    const imgUrl = `https://image.tmdb.org/t/p/w200${poster_path}`;
    const [favOne, setFaveOne] = useState(!isFav);
    const movieVote = vote_average * 10;
-   const needeDate = () => {
+   const neededDate = () => {
       const theDate = new Date(release_date);
       const theDay = theDate.getDate();
       const theMonth = months[theDate.getMonth()];
       const theYear = theDate.getFullYear();
       return `${theDay}, ${theMonth} ${theYear}`
    }
-
-   // const location = useLocation();
-   // // instead of list 
-   // console.log(location);
 
    const progressColor = () => {
       if ( movieVote > 80 )  return '#055305';
@@ -41,11 +40,10 @@ const Movie = ({ id, title, poster_path, vote_average, overview, release_date, h
                favOne && setFaveOne(f => !f);
             }}
          >
-         {/* use location instead */}
          {
-            list ?
+            location ?
             <FontAwesomeIcon 
-               icon={(favOne && !favList) ? farHeart : fasHeart} 
+               icon={(favOne && location) ? farHeart : fasHeart} 
                onClick={(e) => {
                   e.target.classList.add("beat");
                }}
@@ -75,7 +73,7 @@ const Movie = ({ id, title, poster_path, vote_average, overview, release_date, h
             <FontAwesomeIcon icon={faFilm} />
             <span>{title}</span>
          </h2>
-         <span>{needeDate()}</span>
+         <span>{neededDate()}</span>
          <section>
             <h3>About Movie</h3>
             <p>{overview}</p>
@@ -85,4 +83,3 @@ const Movie = ({ id, title, poster_path, vote_average, overview, release_date, h
 }
 
 export default React.memo(Movie);
-// as we used it more than one 

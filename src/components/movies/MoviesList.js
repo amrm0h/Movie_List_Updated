@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFrownOpen } from '@fortawesome/free-solid-svg-icons';
 import Spinner from "./Spinner";
 
-const MoviesList = React.memo(() => {
+const MoviesList = () => {
    const { isLoading, movies, error } = useContext(MovieContext);
    const [visibleMovies, setVisibleMovies] = useState([]);
 
@@ -33,8 +33,7 @@ const MoviesList = React.memo(() => {
       setVisibleMovies(filteredMovies);
    };
 
-
-   // get root chain of my page
+   // get root chain of my page (breadCrumb)
    const getRootChain = () => {
       const windowPath = window.location.pathname;
       const neededPortion = windowPath.substr(windowPath.indexOf("/") + 1);
@@ -50,6 +49,7 @@ const MoviesList = React.memo(() => {
       }
       return chain;
    }
+
    useEffect(() => {
       setVisibleMovies(movies);
       return () => setVisibleMovies([]);
@@ -98,7 +98,6 @@ const MoviesList = React.memo(() => {
                         key={movie.id}
                         {...movie}
                         isFav={movie.isFav}
-                        list={true}
                         handleClick={(id) => handleClick(id)}
                      />
                   ))
@@ -107,6 +106,6 @@ const MoviesList = React.memo(() => {
          )}
       </section>
    )
-});
+};
 
-export default MoviesList
+export default React.memo(MoviesList);

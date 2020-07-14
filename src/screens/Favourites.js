@@ -47,7 +47,6 @@ const Favourites = () => {
                         favMovies.map(movie => (
                            <Movie
                               key={movie.id}
-                              favList={true}
                               {...movie}
                               handleClick={(id) => handleClickRemoveSingle(id)}
                            />

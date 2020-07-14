@@ -1,28 +1,19 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom';
 import { MovieContext } from '../../dataFetching/contextProvider/ContextProvider';
 
 const Filter = () => {
    const { handleChangeUrl, page } = useContext(MovieContext);
-   const listRef = useRef();
-
-   // use react router .
    
    const hanldeClickingTheCategory = (e) => {
       const cat = e.target.getAttribute("data-cat");
       handleChangeUrl(cat, page);
-      const arrayOfListItems = listRef.current.children;
-      for (let sibling of arrayOfListItems) {
-         if (sibling !== e.target.parentElement) sibling.firstElementChild.className = "";
-      }
    }
 
    return (
       <section className="filter_area">
          <span>Filter By Category :</span>
-         <ul
-            ref={listRef}
-         >
+         <ul>
             <li>
                <NavLink
                   to="/top-rated"

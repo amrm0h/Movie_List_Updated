@@ -77,7 +77,10 @@ const Movie = ({ id, title, poster_path, vote_average, overview, release_date, h
          <span>{neededDate()}</span>
          <section>
             <h3>About Movie</h3>
-            <p>{overview}</p>
+            <p>{ overview.length >= 300 ? 
+               `${overview.slice(0, 300)}...` : 
+               overview
+               }</p>
          </section>
       </div>
    )

@@ -7,7 +7,7 @@ const Pagination = () => (
       <ul>
          {
             numbers.map(num =>
-               <li key={num} className={num === 1 && 'active'}>
+               <li key={num} className={(num === 1) ? 'active' : undefined}>
                   <PaginationItem number={num} />
                </li>)
          }

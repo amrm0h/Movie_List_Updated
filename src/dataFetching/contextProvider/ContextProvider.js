@@ -36,6 +36,7 @@ const ContextProvider = ({ children }) => {
          };
          fetMovies();
       }
+
    }, [url, cat, page]);
 
    return (

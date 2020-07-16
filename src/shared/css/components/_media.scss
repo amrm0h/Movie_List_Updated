@@ -433,11 +433,12 @@
 @media screen and (max-width: 600px) {
    body {
       background-position: 0 1rem;
-      padding: 10rem 0 3rem;
+      padding: 0 0 3rem;
    }
 
    header {
       background-position: 0 -4.4rem;
+      position: sticky;
 
       .container {
          flex-direction: column
@@ -454,7 +455,7 @@
       }
 
       nav li {
-         font-size: 1.4rem;
+         font-size: 1.6rem;
          padding: .4rem;
 
          a {
@@ -465,6 +466,7 @@
 
    section.filter_area {
       font-size: 1.2rem;
+      margin-top: .3rem;
 
       >ul {
          li {

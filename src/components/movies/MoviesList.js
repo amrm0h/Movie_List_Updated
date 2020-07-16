@@ -64,7 +64,7 @@ const MoviesList = () => {
                }
             />
          )}
-         <Pagination visibility={movies.length > 0} />
+         <Pagination />
          {(isLoading && !error) && <Spinner />}
          {error && <ErrorModal />}
          {!isLoading && (

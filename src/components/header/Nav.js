@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faHome } from '@fortawesome/free-solid-svg-icons';
@@ -15,10 +15,46 @@ const Nav = () => {
    const { handleChangeUrl } = useContext(MovieContext);
    // when return to home , activate the first page 
    const handleClick = () => handleChangeUrl("top-rated", 1);
+   const [ burgerNav, setburgerNav ] = useState(false);
+   const [ ulExpanded, setUlExpanded ] = useState(false);
+
+   const navBarBurgering = () => {
+      if ( window.innerWidth <= 600 ) {
+         setburgerNav(true);
+      } else {
+         setburgerNav(false);
+      }
+   };
+
+   useEffect(() => {
+      navBarBurgering();
+      window.addEventListener("resize", navBarBurgering);
+   }, []);
 
    return (
-      <nav>
-         <ul>
+      <nav 
+         className={burgerNav ? "collapsed" : undefined}
+         style={{
+            height: burgerNav ? 'auto' : 'unset'
+         }}
+      >
+         <span 
+            className={ulExpanded ? 'burger close' : 'burger'} 
+            onClick={() => {
+               setUlExpanded(ex => !ex);
+            }}
+         >
+            <span></span>
+            <span></span>
+            <span></span>
+         </span>
+
+         <ul
+            className={(burgerNav &&  !ulExpanded) ? 'ul_not_expanded' : 'ul_expanded'}
+            style={{
+               overflow: 'hidden'
+            }}
+         >
             <li>
                <NavLink
                   to="/top-rated"

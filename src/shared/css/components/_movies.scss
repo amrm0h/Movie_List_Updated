@@ -3,6 +3,7 @@ section.movielist_area {
    min-width: 77.5%;
    color: white;
    text-align: center;
+
    &>div.movies {
       @extend %bs;
       @extend %center;
@@ -11,6 +12,7 @@ section.movielist_area {
       border-radius: 1rem;
       background: $lightMainColor;
       background: linear-gradient(45deg, $mainColor 0%, $lightMainColor 100%);
+
       >.movie {
          width: calc(25% - 2rem);
          max-width: calc(25% - 2rem);
@@ -22,6 +24,7 @@ section.movielist_area {
          margin-bottom: 1.8rem;
          flex-grow: 1;
          position: relative;
+
          >button {
             position: absolute;
             top: 1.5rem;
@@ -31,6 +34,7 @@ section.movielist_area {
             height: 2.3rem;
             background: transparent;
             z-index: 2;
+
             >.svg-inline--fa {
                width: 100%;
                height: 100%;
@@ -39,17 +43,20 @@ section.movielist_area {
                padding: .3rem;
                cursor: pointer;
                background: white;
+
                &.beat {
                   animation: bs .7s ease-in-out 1;
                }
             }
          }
+
          .image_holder {
             overflow: hidden;
             border-bottom: .2rem solid white;
             border-radius: 1rem 1rem 0 0;
             height: 76%;
             min-height: 76%;
+
             >img {
                width: 100%;
                height: 100%;
@@ -58,19 +65,23 @@ section.movielist_area {
                transition: all ease-in-out .6s;
             }
          }
+
          >span:first-of-type {
             display: block;
             width: 20%;
             position: absolute;
             top: 68%;
             left: 4%;
+
             >.CircularProgressbar.progress_bar {
                .CircularProgressbar-background {
                   fill: white;
                }
+
                .CircularProgressbar-trail {
                   stroke: transparent;
                }
+
                .CircularProgressbar-text {
                   font-size: 3.5rem;
                   font-weight: bold;
@@ -78,6 +89,7 @@ section.movielist_area {
                }
             }
          }
+
          h2 {
             font-size: 1.7rem;
             padding: 1rem .8rem 0;
@@ -89,16 +101,19 @@ section.movielist_area {
             margin-bottom: 1rem;
             justify-content: flex-start;
             @extend %center;
+
             &>.svg-inline--fa {
                color: $mainColor;
                margin-right: .5rem;
                font-size: 1.6rem;
             }
+
             &>span {
                padding-left: .4rem;
                text-align: left;
             }
          }
+
          >span:last-of-type {
             color: #dbdbdb;
             padding: 0 0 1rem 1rem;
@@ -106,47 +121,69 @@ section.movielist_area {
             font-size: 1.3rem;
             text-align: left;
          }
+
          >section {
-            background: rgba(255, 255, 224, 0.8);
-            border-radius: .6rem;
+            color: #fef7f7;
             top: 12rem;
             position: absolute;
             overflow: hidden;
             left: 0;
-            width: 100%;
-            box-shadow: 0 0 .4rem .1rem rgba(255, 255, 224, 1);
             opacity: 0;
-            cursor: default;
+            width: 70%;
+            margin-left: 14.5%;
+            margin-top: 4rem;
             transition: all ease-in-out .6s;
-            h3 {
-               font-size: 1.8rem;
-               color: #fef7f7;
-               padding: 1rem 0;
+
+            button {
                background: #14161a;
-            }
-            p {
-               color: #302d2d;
-               padding: 1rem .4rem;
-               font-size: 1.3rem;
-               line-height: 1.3;
-               letter-spacing: .02rem;
+               color: lightyellow;
+               overflow: hidden;
+               width: 100%;
+               border-radius: .6rem;
+               padding: 0;
+               position: relative;
+               border: .4rem solid lightyellow;
+               transition: all linear .3s;
+
+               &:hover {
+                  background: lightyellow;
+                  color: black;
+               }
+
+               >a {
+                  display: block;
+                  letter-spacing: .05rem;
+                  font-weight: bold;
+                  font-size: 1.6rem;
+                  padding: .9rem 0;
+                  cursor: default;
+               }
             }
          }
-         &:hover > section {
+
+         &:hover>section {
             top: 5rem;
             opacity: 1;
+
+            a {
+               cursor: pointer;
+            }
          }
+
          &:hover img {
             transform: scale(1.1);
             filter: grayscale(1);
          }
       }
+
       >.no_match {
          text-align: center;
          color: black;
+
          >.svg-inline--fa {
             font-size: 3rem;
          }
+
          >p {
             padding-top: 2rem;
             font-size: 2.5rem;

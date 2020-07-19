@@ -8,6 +8,7 @@ import ContextProvider from "./dataFetching/contextProvider/ContextProvider";
 
 import "normalize.css"
 import "./shared/css/App.scss";
+import MovieDetails from './screens/MovieDetails';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
               <Home />
             </Route>
             <Route path="/favourites" component={Favourites} exact />
+            <Route path="/movie/ID_:id" component={MovieDetails}  />
             <Route component={NotFoundPage} />
           </Switch>
         </Router>
